@@ -56,7 +56,7 @@ Read the Test & Training Sets, each has 3 files, one containing the numeric resu
   mergedData <- cbind(mergedSubjects, mergedMeasures, mergedData)
 ```
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-The combined mergedData will have duplicate subject and activity, so we use `group_by()` function to aggregrate the measures and calculate the mean.  Once the tidied data is created, we output to a text file using `write.table()`  The description of the data in the tidied file can be found in the [CodeBook.MD](https://github.com/chengseng/GettingnCleaningData/CodeBook.MD) file.
+The combined mergedData will have duplicate subject and activity rows, so we use `group_by()` function to aggregrate the measures and calculate the mean.  Once the tidied data is created, we output to a text file using `write.table()` setting `row.names=FALSE`.  The description of the data in the tidied file can be found in the [CodeBook.MD](https://github.com/chengseng/GettingnCleaningData/blob/master/CodeBook.md) file.
 ```
   ## Group mergedData by Subject, Activity, pipe results into computing the mean across all measures
   library(dplyr)
@@ -64,7 +64,7 @@ The combined mergedData will have duplicate subject and activity, so we use `gro
   summarise_all(mean)
 
   ## Write out to text file
-  write.table(tidyData,"tidyData.txt")
+  write.table(tidyData,file="tidyData.txt",row.names=FALSE)
 ```
 
 # Acknowledgement of Dataset Use

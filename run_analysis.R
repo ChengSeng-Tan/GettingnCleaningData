@@ -42,6 +42,6 @@ analyse <- function(){
   tidyData<-group_by(mergedData, subject, activity) %>%
   summarise_all(mean)
 
-  ## Write out to text file
-  write.table(tidyData,"tidyData.txt")
+  ## Write out to text file, leave out the row names
+  write.table(tidyData,file="tidyData.txt",row.names=FALSE)
 }

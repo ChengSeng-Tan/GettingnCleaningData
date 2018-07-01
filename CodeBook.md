@@ -1,12 +1,12 @@
 # Tidy Data Code Book
-This tidy data set was created from the Test & Training Sets from [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) with the average of each variable calculated for each activity and each subject.
+This tidy data set was created from the Test & Training Sets from [Human Activity Recognition Using Smartphones Dataset Version 1.0](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).  The dataset captured the accerlerometer and gyroscope sensor signals of volunteers performing six activities wearing a smartphone.  The 561-feature vector with time and frequency domain variables have been subsetted to scope those with mean and standard deviation in the label name.  This tidy data set averages each of these selected variables for each activity & each subject.  The text file `tidyData.txt` containing the tidy data set can be downloaded from [here](https://github.com/chengseng/GettingnCleaningData/blob/master/tidyData.txt).  You can use `read.table()` to load the data.
 
 # Variable list
 
 
 No. | Variable | Class | Description 
 ----|--------- | ------|---------------------------------------
-1 | subject | integer | ID of the Subject 
+1 | subject | integer | ID of the Subject, 1-30 
 2 | activity | factor | LAYING / SITTING / STANDING / WALKING / WALKING_DOWNSTAIRS / WALKING_UPSTAIRS 
 3 | TimeBodyAcc.mean...X | numeric | Mean of column variable for  subject & activity  
 4 | TimeBodyAcc.mean...Y | numeric | Mean of column variable for  subject & activity  
